@@ -9,7 +9,7 @@ function Contact () {
     message: ''
   }); 
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => { 
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
@@ -23,8 +23,8 @@ function Contact () {
       [e.target.name]: e.target.value
     });
   };
-    return (
- <section id="contact" className="py-24 px-6 bg-slate-950">
+    return ( 
+ <section id="contact" className="py-24 px-6 bg-slate-950"> 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="mb-4 text-white">Get In Touch</h2>
@@ -85,7 +85,7 @@ function Contact () {
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} action="https://form.typeform.com/to/cH6tTLZj" method='POST' className="space-y-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-slate-300">
                   Name

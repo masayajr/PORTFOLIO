@@ -35,7 +35,7 @@ function Home () {
           </div> 
           {/* Social Links */}
              <div className="flex gap-6 justify-center mb-16">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
+          <a href="https://github.com/masayajr" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
             <Github className="w-6 h-6" />
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
