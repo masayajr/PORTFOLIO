@@ -26,10 +26,12 @@ function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  setStatus('Sending...'); // optional status message
+  setStatus('Sending...'); // optional status message 
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   try {
-    const response = await fetch('http://localhost:3333/contact', {
+    const response = await fetch(`${API_URL}/contact`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
