@@ -10,7 +10,7 @@ function About () {
           <div>
             <h2 className="mb-6 text-white">About Me</h2>
             <p className="mb-4 text-slate-300">
-              I'm a full stack developer with 5+ years of experience building web applications that users love. 
+              I'm a junior full stack developer with 5+ years of experience building web applications that users love. 
               I specialize in React, Node.js, and modern cloud technologies.
             </p>
             <p className="mb-4 text-slate-300">

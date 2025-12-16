@@ -1,7 +1,7 @@
 import '../App.css';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
-import type { ChangeEvent, FormEvent } from 'react';
+import type { ChangeEvent} from 'react';
 
 interface FormData {
   name: string;
