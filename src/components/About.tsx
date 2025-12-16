@@ -1,6 +1,5 @@
 import '../App.css'
-
-import Self  from '../assets/Snapchat-411872927-2.jpg'
+import Self2 from '../assets/IMG-20251209-WA0017.jpg'
 
 function About () {
     
@@ -25,9 +24,9 @@ function About () {
           </div>
 
                     <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg opacity-20 blur-2xl"></div>
+            <div className="absolute -inset-4 bg-linear-to-r from-indigo-500 to-purple-500 rounded-lg opacity-20 blur-2xl"></div>
             <div className="relative rounded-lg overflow-hidden border border-slate-800">
-              <img src={Self} alt="" className="w-full h-[50vh]"/>
+              <img src={Self2} alt="" className="w-screen md:w-[50vh] "/>
             </div> 
           </div>
         </div>
@@ -36,4 +35,4 @@ function About () {
     )
 }
  
-export default About;       
+export default About;         

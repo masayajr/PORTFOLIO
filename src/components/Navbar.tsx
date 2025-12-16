@@ -60,7 +60,7 @@ import { Menu, X } from 'lucide-react'
         <div className="flex items-center justify-between">
           <button 
             onClick={() => scrollToSection('hero')}
-            className="text-white hover:text-indigo-400 transition-colors"
+            className="text-white hover:text-indigo-400 transition-colors cursor-pointer"
           >
             <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-purple-400">
               {'CODE FLEX'}

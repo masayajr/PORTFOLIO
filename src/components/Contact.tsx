@@ -1,28 +1,54 @@
-import '../App.css'  
+import '../App.css';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 
-function Contact () {  
-    const [formData, setFormData] = useState({
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+function Contact() {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     message: ''
-  }); 
+  });
+  const [status, setStatus] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => { 
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setStatus('Sending...'); // optional status message
+
+  try {
+    const response = await fetch('http://localhost:3333/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setStatus(data.message); // "Email sent successfully."
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setStatus(data.message || 'Failed to send message.');
+    }
+  } catch (err) {
+    console.error(err);
+    setStatus('Failed to send message.');
+  }
+};
+
     return ( 
  <section id="contact" className="py-24 px-6 bg-slate-950"> 
       <div className="max-w-6xl mx-auto">
@@ -57,7 +83,7 @@ function Contact () {
                   </div>
                   <div>
                     <p className="text-slate-400">Phone</p>
-                    <a href="tel:+1234567890" className="text-white hover:text-indigo-400 transition-colors">
+                    <a href="tel:+2347035914420" className="text-white hover:text-indigo-400 transition-colors">
                       +2347035914420
                     </a>
                   </div>
@@ -75,7 +101,7 @@ function Contact () {
               </div>
             </div>
             
-            <div className="p-6 rounded-lg bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20">
+            <div className="p-6 rounded-lg bg-linear-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20">
               <p className="text-slate-300">
                 I'm always interested in hearing about new projects and opportunities. 
                 Whether you have a question, just wanting to say hi or wanting to collaborate on a project. <br />
@@ -85,7 +111,7 @@ function Contact () {
           </div>
           
           <div>
-            <form onSubmit={handleSubmit} action="https://form.typeform.com/to/cH6tTLZj" method='POST' className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-slate-300">
                   Name
@@ -139,7 +165,9 @@ function Contact () {
                 className="w-full px-8 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2 cursor-pointer">
                 <span>Send Message</span>
                 <Send className="w-4 h-4" />
-              </button>
+              </button> 
+
+              {status && <p className="mt-4 text-center text-slate-300">{status}</p>}
             </form>
           </div>
         </div>
