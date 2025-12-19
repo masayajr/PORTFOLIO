@@ -1,5 +1,5 @@
 import '../App.css'   
-import { Code2, Database, Cloud, Smartphone, GitBranch, Layers } from 'lucide-react';
+import { Code2, Workflow, Cloud, Smartphone, GitBranch, Layers, Figma, Database } from 'lucide-react';
 
 function Skills () { 
   const skillCategories = [
@@ -9,19 +9,19 @@ function Skills () {
       skills: ['Html', 'CSS', 'Javascript', 'React.js', 'Talewind CSS', 'Next.js']
     },
     {
-      icon: Database,
+      icon: Workflow,
       title: 'Backend',
-      skills: ['Node.js', 'Nest.js', 'Python', 'PostgreSQL', 'MongoDB']
+      skills: ['Node.js', 'Nest.js', 'Error handling', 'Api', 'Authentication & Authorization']
+    },
+    {
+      icon: Figma,
+      title: 'UI/UX',
+      skills: ['Desktop & Mobile Designs', 'Web', 'Apps']
     },
     {
       icon: Cloud,
-      title: 'Cloud & DevOps',
-      skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform']
-    },
-    {
-      icon: Smartphone,
-      title: 'Mobile',
-      skills: ['React Native', 'PWA', 'Responsive Design', 'iOS', 'Android']
+      title: 'Deployment & DevOpps',
+      skills: ['Docker', 'Render', 'Netlify', 'CI/CD pipelines', 'Uptime Ping']
     },
     {
       icon: GitBranch,
@@ -29,9 +29,9 @@ function Skills () {
       skills: ['Git', 'GitHub', 'GitLab', 'Bitbucket', 'Code Review']
     },
     {
-      icon: Layers,
-      title: 'Architecture',
-      skills: ['Microservices', 'REST APIs', 'GraphQL', 'System Design', 'Testing']
+      icon: Database,
+      title: 'Database',
+      skills: ['PostgreSQL', 'MongoDB', 'Prisma', 'Schema Design', 'TypeORM']
     }
   ];
     return (
