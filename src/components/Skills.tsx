@@ -1,5 +1,5 @@
 import '../App.css'   
-import { Code2, Workflow, Cloud, Smartphone, GitBranch, Layers, Figma, Database } from 'lucide-react';
+import { Code2, Workflow, Cloud, GitBranch, Figma, Database } from 'lucide-react';
 
 function Skills () { 
   const skillCategories = [

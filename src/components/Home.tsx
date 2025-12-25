@@ -38,7 +38,7 @@ function Home () {
           <a href="https://github.com/masayajr" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
             <Github className="w-6 h-6" />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
+          <a href="https://www.linkedin.com/in/suleiman-masaya-b78a54388/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-400 transition-colors">
             <Linkedin className="w-6 h-6" />
           </a>
           <a href="mailto:suleimanmasaya6@gmail.com" className="text-slate-400 hover:text-indigo-400 transition-colors">
